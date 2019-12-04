@@ -29,8 +29,8 @@ class UsersController < ApplicationController
   def update
     find_user
     # @user = User.new(user_params)
-    if @user.update
-      redirect_to @user
+    if @user.update(user_params)
+      redirect_to user_path(@user)
     else
       flash[:errors] = @user.errors.full_messages
       redirect_to edit_user_path(@user)
@@ -51,7 +51,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:name, :bio)
+    params.require(:user).permit(:name, :bio, :password)
   end
 
 end
