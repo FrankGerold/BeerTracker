@@ -1,0 +1,9 @@
+<h1>Floors</h1>
+
+<h3>
+  <ul>
+    <% @floors.each do |f| %>
+      <li><%= link_to "#{f.floor_number.ordinalize} Floor", f %></li>
+      <% end %>
+  </ul>
+</h3>
