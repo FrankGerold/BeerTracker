@@ -5,7 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-20.times do 
+User.destroy_all
+Keg.destroy_all
+Floor.destroy_all
+Cup.destroy_all 
+KegFloor.destroy_all
+
+10.times do 
     User.create({
         name: Faker::Movies::StarWars.character,
         bio: Faker::Movies::StarWars.quote
@@ -16,7 +22,20 @@
     })
     Floor.create({
         building: Faker::Movies::StarWars.planet, 
-        floor_number: rand(1..10).to_s
+        floor_number: rand(1..10)
     })
-    
-    
+end     
+30.times do 
+    Cup.create({
+        rating: rand(1..10),
+        keg: Keg.all.sample,
+        user: User.all.sample
+    })
+end 
+15.times do 
+    KegFloor.create({
+        floor: Floor.all.sample,
+        keg: Keg.all.sample,
+        user: User.all.sample
+    })
+end 
