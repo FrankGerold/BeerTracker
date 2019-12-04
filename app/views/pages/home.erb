@@ -1,0 +1,28 @@
+<h1>WELCOME TO BEERTRACKR</h1>
+
+<% @floors.each do |floor|%>
+    <div class="row">
+
+    <div class="floor_column">
+      <%= link_to "#{floor.building} - #{floor.floor_number.ordinalize} floor", floor_path(floor) %>
+    </div>
+     <div class="beer_column">
+     <% if floor.kegs.last %>
+        <% @current_keg = floor.kegs.last %>
+        <%= link_to @current_keg.name, @current_keg %>
+      <% end %>
+      </div>
+     <div class="rating_column">
+    <% if floor.kegs.last%>
+        <% @current_keg = floor.kegs.last%>
+        <% @ratings = @current_keg.cups.map do |cup| %>
+            <% cup.rating %>
+        <% end %>
+        <% if @ratings.length > 0 %>
+         <% @average = (@ratings.sum / @ratings.size.to_f) %>
+         <%= @average.round %>
+        <% end %>
+    <% end %>
+     </div>
+    </div>
+<% end %>
