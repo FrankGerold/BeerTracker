@@ -1,0 +1,2 @@
+class KegsController < ApplicationController
+end
