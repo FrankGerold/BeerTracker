@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_04_142225) do
+ActiveRecord::Schema.define(version: 2019_12_04_212212) do
 
   create_table "cups", force: :cascade do |t|
     t.integer "rating"
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 2019_12_04_142225) do
     t.string "bio"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "password_digest"
   end
 
 end
