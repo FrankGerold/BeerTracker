@@ -1,0 +1,8 @@
+<h1>Kegs </h1>
+
+
+<% @kegs.each do |keg| %>
+    <div class="keg_display">
+        <h3><%= link_to "#{keg.name} - #{keg.type}", keg %></h3>
+    </div>
+<% end %>

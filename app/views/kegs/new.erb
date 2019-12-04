@@ -1,0 +1,23 @@
+<h1>New Keg</h1>
+
+<ul>
+<% if flash[:errors] %>
+    <% flash[:errors].each do |error| %>
+        <li>
+        <%= error %>
+        </li>
+    <% end %>
+<% end %>
+</ul>
+<%= form_with model: @keg do |f| %>
+    <%= f.label :name%>
+    <%= f.text_field :name %>
+    <br>
+    <%= f.label :type %>
+    <%= f.text_field :type %>
+    <br>
+    <%= f.submit %>
+<% end %>
+
+<br>
+<%= link_to "Back to Kegs", kegs_path %>
