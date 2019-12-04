@@ -1,7 +1,7 @@
 <h1><%= @user.name %></h1>
 <h3><%= @user.bio %></h3>
 
-<% user.cups.each do |cup| %>
+<% @user.cups.each do |cup| %>
   <%= cup.keg.name %><br>
   <%=  cup.rating %>
 <% end %>
