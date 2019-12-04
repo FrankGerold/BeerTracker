@@ -1,10 +1,19 @@
 <h1><%= @keg.name %></h1>
 <h3><%= @keg.beer_type %></h3>
 
+<h3>WHERE AM I?</h3>
 <ul>
 <% @keg.keg_floors.each do |keg_floor|%>
 <li>
 <%= link_to "#{keg_floor.floor.building} - #{keg_floor.floor.floor_number}", keg_floor.floor %>
+</li>
+<% end %>
+</ul>
+<h3>WHO DRANK ME?</h3>
+<ul>
+<% @keg.cups.each do |cup| %>
+<li>
+<%= link_to "#{cup.user.name} - #{cup.rating}", user_path(cup.user) %>
 </li>
 <% end %>
 </ul>

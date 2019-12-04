@@ -47,6 +47,6 @@ class KegsController < ApplicationController
         @keg = Keg.find(params[:id])
     end 
     def keg_params 
-        params.require(:keg).permit(:name, :type)
+        params.require(:keg).permit(:name, :beer_type)
     end 
 end
