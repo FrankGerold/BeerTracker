@@ -4,9 +4,17 @@ class SessionsController < ApplicationController
   end
 
   def create
-    session[:username] = params[:username]
+    @user = User.find_by(name: params[:username])
 
-    redirect_to '/'
+    if @user && @user.authenticate(params[:password])
+      login_user(@user)
+      flash[:notice] = "Welcome to Kegerator, #{@user.name}"
+      redirect_to @user
+    else
+      flash[:notice] = "Sorry, login failed."
+      redirect_to login_path
+    end
+    
   end
 
 end
