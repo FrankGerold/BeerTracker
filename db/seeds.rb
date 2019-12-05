@@ -29,19 +29,29 @@ conrad = User.create(name: "Conrad", bio: "Cereal is the most important meal of 
 imade = User.create(name: "Imade", bio: "Soooooo..........", password: '123')
 bihelca = User.create(name: "Bihelca", bio: "Stay away from my spices", password: '123')
 
+p2 = Floor.create(building: "Prospect", floor_number: 2)
+p3 = Floor.create(building: "Prospect", floor_number: 3)
+p4 = Floor.create(building: "Prospect", floor_number: 4)
+p5 = Floor.create(building: "Prospect", floor_number: 5)
+p6 = Floor.create(building: "Prospect", floor_number: 6)
+p7 = Floor.create(building: "Prospect", floor_number: 7)
+p8 = Floor.create(building: "Prospect", floor_number: 8)
+p9 = Floor.create(building: "Prospect", floor_number: 9)
+s2 = Floor.create(building: "Sands", floor_number: 2)
+s3 = Floor.create(building: "Sands", floor_number: 3)
+s4 = Floor.create(building: "Sands", floor_number: 4)
+s5 = Floor.create(building: "Sands", floor_number: 5)
+s6 = Floor.create(building: "Sands", floor_number: 6)
+s7 = Floor.create(building: "Sands", floor_number: 7)
+s8 = Floor.create(building: "Sands", floor_number: 8)
+s9 = Floor.create(building: "Sands", floor_number: 9)
+
+
+
 10.times do
-    User.create({
-        name: Faker::Movies::StarWars.character,
-        bio: Faker::Movies::StarWars.quote,
-        password: '123'
-    })
     Keg.create({
         name: Faker::Movies::StarWars.call_sign,
         beer_type: Faker::Movies::StarWars.call_squadron
-    })
-    Floor.create({
-        building: Faker::Movies::StarWars.planet,
-        floor_number: rand(1..10)
     })
 end
 30.times do
