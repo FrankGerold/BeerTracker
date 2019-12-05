@@ -1,17 +1,34 @@
 <h1>New User</h1>
 
-<% if flash[:errors] %>
-  <ul>
-  <% flash[:errors].each do |err| %>
-      <li><%= err %></li>
-  <% end %>
-  </ul>
-  <% end %>
+<%= form_tag users_path do %>
+<%= label_tag "Username" %>
+<%= text_field_tag :'user[name]' %><br>
+<%= label_tag 'Password' %>
+<%= text_field_tag :'user[password]' %><br>
+<%= submit_tag "Create User" %>
+<% end %>
 
-<%= form_with model: @user do |form| %>
-  <%= form.label :name %>
-  <%=  form.text_field :name %><br>
-    <%= form.label :bio %>
-  <%= form.text_area :bio %><br>
-  <%= form.submit "Create User" %><br>
+
+
+
+
+
+
+
+<% if false %>
+  <% if flash[:errors] %>
+    <ul>
+    <% flash[:errors].each do |err| %>
+        <li><%= err %></li>
+    </ul>
+    <% end %>
+    <% end %>
+
+  <%= form_with model: @user do |form| %>
+    <%= form.label :name %>
+    <%=  form.text_field :name %><br>
+      <%= form.label :bio %>
+    <%= form.text_area :bio %><br>
+    <%= form.submit "Create User" %><br>
+  <% end %>
 <% end %>
