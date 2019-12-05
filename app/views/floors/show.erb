@@ -8,6 +8,12 @@
       <p>Sorry, no beer here!</p>
     <% end %>
 </h2></div>
+
+ <br>
+
+ <h2>Most common beer on this floor:</h2>
+ <h2> <%= link_to @floor.most_popular_beer.name, @floor.most_popular_beer %></h2>
+
   <div class="past_beers">
   <h3>Past Beers:<br>
     <ul>
