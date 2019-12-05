@@ -1,24 +1,30 @@
 <h1><%= @keg.name %></h1>
 <h3><%= @keg.beer_type %></h3>
-
+<br>
+<h3>Review this beer</h3>
+<%= form_with model: Cup.new do |f| %>
+    <%= f.hidden_field(:user_id, value: session[:user_id]) %>
+    <%= f.hidden_field(:keg_id, value: @keg.id) %>
+    <%= f.label :rating %>
+    <%= f.number_field :rating%>
+    <%= f.submit "Review this Beer!" %>
+<% end %>
+<br>
 <h3>WHERE AM I?</h3>
 <ul>
-<% @keg.keg_floors.each do |keg_floor|%>
+<% @keg.keg_floors.reverse.each do |keg_floor|%>
 <li>
 <%= link_to "#{keg_floor.floor.building} - #{keg_floor.floor.floor_number}", keg_floor.floor %>
 </li>
 <% end %>
+
 </ul>
 <h3>WHO DRANK ME?</h3>
 <ul>
-<% @keg.cups.each do |cup| %>
+<% @keg.cups.reverse.each do |cup| %>
 <li>
 <%= link_to "#{cup.user.name} - #{cup.rating}", user_path(cup.user) %>
 </li>
 <% end %>
 </ul>
-
-<br>
-<%= link_to "Back to Kegs", kegs_path %>
-<br>
 <%= link_to "Edit this Keg", edit_keg_path(@keg) %>

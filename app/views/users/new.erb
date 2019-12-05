@@ -12,23 +12,3 @@
 
 
 
-
-
-
-<% if false %>
-  <% if flash[:errors] %>
-    <ul>
-    <% flash[:errors].each do |err| %>
-        <li><%= err %></li>
-    </ul>
-    <% end %>
-    <% end %>
-
-  <%= form_with model: @user do |form| %>
-    <%= form.label :name %>
-    <%=  form.text_field :name %><br>
-      <%= form.label :bio %>
-    <%= form.text_area :bio %><br>
-    <%= form.submit "Create User" %><br>
-  <% end %>
-<% end %>

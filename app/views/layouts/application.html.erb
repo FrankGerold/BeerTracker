@@ -10,6 +10,26 @@
   </head>
 
   <body>
+  <h1>BeerTrakr</h1>
+  <h3><%= link_to "HOME", '/' %>        
+  <% if session[:user_id] %>
+  <%= link_to "USER", user_path(session[:user_id]) %> <%= link_to "LOGOUT", '/logout' %>
+  <% else %>
+  <%= link_to "LOGIN", '/login' %>     
+  <% end %>
+
+  <br>
+  <% if flash[:errors] %>
+    <ul>
+    <% flash[:errors].each do |err| %>
+        <li><%= err %></li>
+    </ul>
+    <% end %>
+  <% end %>
+  <% if flash[:notice] %>
+    <%= flash[:notice] %>
+  <% end %>
+
     <%= yield %>
   </body>
 </html>
