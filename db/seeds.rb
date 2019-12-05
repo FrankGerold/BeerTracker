@@ -15,7 +15,8 @@ KegFloor.destroy_all
 10.times do 
     User.create({
         name: Faker::Movies::StarWars.character,
-        bio: Faker::Movies::StarWars.quote
+        bio: Faker::Movies::StarWars.quote,
+        password: "123"
     })
     Keg.create({
         name: Faker::Movies::StarWars.call_sign, 
