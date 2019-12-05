@@ -34,7 +34,7 @@ end
         user: User.all.sample
     })
 end
-15.times do
+50.times do
     KegFloor.create({
         floor: Floor.all.sample,
         keg: Keg.all.sample,

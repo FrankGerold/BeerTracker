@@ -6,7 +6,8 @@
     <%= f.hidden_field(:user_id, value: session[:user_id]) %>
     <%= f.hidden_field(:keg_id, value: @keg.id) %>
     <%= f.label :rating %>
-    <%= f.number_field :rating%>
+    <%= f.number_field :rating%><br>
+    <%= f.collection_select(:opt_floor, Floor.all, :id, :floor_number, prompt: "Do you know what floor it's on?") %><br>
     <%= f.submit "Review this Beer!" %>
 <% end %>
 <br>
