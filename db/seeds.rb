@@ -12,6 +12,23 @@ Floor.destroy_all
 Cup.destroy_all
 KegFloor.destroy_all
 
+# AWESOME SEEDS TO FOLLOW 
+
+frank = User.create(name: "Frank", bio: "Wu-Tang Clan ain't nothing to $(*& with", password: '123')
+dominic = User.create(name: "Dominic", bio: "Hella Hella Hella", password: '123')
+tristan = User.create(name: "Tristan", bio: "Wanna order delievery?", password: '123')
+james = User.create(name: "James", bio: "I don't want to eat lunch", password: '123')
+soner = User.create(name: "Soner", bio: "I am taller than you", password: '123')
+gena = User.create(name: "Gena", bio: "NO MORE RPGS!", password: '123')
+fanzhong = User.create(name: "FanZhong", bio: "MOAR RPGS!", password: '123')
+jakari = User.create(name: "Jakari", bio: "Pass", password: '123')
+griffin = User.create(name: "Griffin", bio: "All about that codewars life", password: '123')
+samir = User.create(name: "Samir", bio: "Gym Tan Laundry bro", password: '123')
+sadia = User.create(name: "Sadia", bio: "Sunrise melt + Bathroom cry = life", password: '123')
+conrad = User.create(name: "Conrad", bio: "Cereal is the most important meal of the day", password: '123')
+imade = User.create(name: "Imade", bio: "Soooooo..........", password: '123')
+bihelca = User.create(name: "Bihelca", bio: "Stay away from my spices", password: '123')
+
 10.times do
     User.create({
         name: Faker::Movies::StarWars.character,

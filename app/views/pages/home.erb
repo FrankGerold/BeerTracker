@@ -1,6 +1,7 @@
 <h1>WELCOME TO BEERTRACKR</h1>
 
 <% @floors.each do |floor|%>
+<br>
     <div class="row">
 
     <div class="floor_column">
@@ -9,19 +10,16 @@
      <div class="beer_column">
      <% if floor.kegs.last %>
         <% @current_keg = floor.kegs.last %>
+
+        <%= "Last seen on #{@current_keg.show_day}" %>
+        <br>
         <%= link_to @current_keg.name, @current_keg %>
       <% end %>
       </div>
      <div class="rating_column">
     <% if floor.kegs.last%>
         <% @current_keg = floor.kegs.last%>
-        <% @ratings = @current_keg.cups.map do |cup| %>
-            <% cup.rating %>
-        <% end %>
-        <% if @ratings.length > 0 %>
-         <% @average = (@ratings.sum / @ratings.size.to_f) %>
-         <%= @average.round %>
-        <% end %>
+        <%= @current_keg.beer_emoji %>
     <% end %>
      </div>
     </div>
