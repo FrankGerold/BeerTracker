@@ -5,11 +5,13 @@
     <%= f.label :rating %>
     <%= f.number_field :rating %>
     <br>
-    <%= f.label :user %>
-    <%= f.collection_select(:user_id, User.all, :id, :name, prompt: true) %>
+
+    <%= f.hidden_field(:user_id, value: session[:user_id]) %>
     <br>
+
     <%= f.label :keg %>
     <%= f.collection_select(:keg_id, Keg.all, :id, :name, prompt: true) %>
     <br>
+    
     <%= f.submit %>
 <% end %>

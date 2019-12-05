@@ -1,12 +1,10 @@
-<h1>New Sighting of a Keg!</h1>
-<h1>KegFloor New Page</h1>
+<h1>New Keg Sighting!</h1>
 
 <%= form_with model: @keg_floor do |f| %>
     <%= f.label :floor %>
     <%= f.collection_select(:floor_id, Floor.all, :id, :floor_number, prompt: true) %>
     <br>
-    <%= f.label :user %>
-    <%= f.collection_select(:user_id, User.all, :id, :name, prompt: true) %>
+    <%= f.hidden_field(:user_id, value: session[:user_id]) %>
     <br>
     <%= f.label :keg %>
     <%= f.collection_select(:keg_id, Keg.all, :id, :name, prompt: true) %>

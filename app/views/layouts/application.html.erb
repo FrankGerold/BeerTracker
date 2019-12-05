@@ -11,11 +11,11 @@
 
   <body>
   <h1>BeerTrakr</h1>
-  <h3><%= link_to "HOME", '/' %>        
+  <h3><%= link_to "HOME", '/' %>
   <% if session[:user_id] %>
   <%= link_to "USER", user_path(session[:user_id]) %> <%= link_to "LOGOUT", '/logout' %>
   <% else %>
-  <%= link_to "LOGIN", '/login' %>     
+  <%= link_to "LOGIN", '/login' %>
   <% end %>
 
   <br>
@@ -31,5 +31,7 @@
   <% end %>
 
     <%= yield %>
+    <br>
+    <%= link_to "Found a new keg?", new_keg_floor_path %>
   </body>
 </html>
