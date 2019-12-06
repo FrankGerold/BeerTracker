@@ -61,7 +61,7 @@ body {
     margin-top: 20px;
 }
 
-.leftcolumn > h2, h3, h5, p {
+.leftcolumn > h2, h3, h4, h5, p {
  border-radius: 15px 50px 30px;
  background: #FFCF50;
  padding: 20px;

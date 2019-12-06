@@ -1,7 +1,10 @@
-<h1><%= @user.name %></h1>
+<div class="leftcolumn">
+  <h1><%= @user.name %></h1>
 <h3><%= @user.bio %></h3>
 
 <% @user.cups.reverse.each do |cup| %>
   <%= link_to "#{cup.keg.name} - #{cup.rating}", keg_path(cup.keg) %>
 <% end %>
 
+
+</div>

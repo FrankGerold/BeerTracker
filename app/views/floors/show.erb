@@ -1,13 +1,12 @@
-<h1><%= @floor.floor_number.ordinalize %> Floor</h1>
-
-<div class="current_beer">
+<div class="leftcolumn">
+<h2><%= @floor.floor_number.ordinalize %> Floor</h2>
   <h2>Current Beer:<br>
     <% if @floor.kegs %>
       <%= link_to @floor.kegs.first.name, @floor.kegs.first %>
     <% else %>
       <p>Sorry, no beer here!</p>
     <% end %>
-</h2></div>
+</h2>
   <div class="past_beers">
   <h3>Past Beers:<br>
     <ul>
@@ -16,4 +15,6 @@
       <% end %>
     </ul>
   </h3>
+</div>
+
 </div>

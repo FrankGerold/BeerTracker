@@ -1,4 +1,5 @@
-<h1><%= @keg.name %></h1>
+<div class="leftcolumn">
+  <h2><%= @keg.name %></h2>
 <div class="fakeimg" style="height:300; width:300"> <%= image_tag( "#{@keg.photo_url}", height: '400', width: '330') %>  </div>
 <h3>Style: <%= @keg.beer_type %></h3>
 <h3>Alcohol By Volume: <%= @keg.abv %>%</h3>
@@ -34,3 +35,4 @@
 <% end %>
 </ul>
 <%= link_to "Edit this Keg", edit_keg_path(@keg) %>
+</div>
