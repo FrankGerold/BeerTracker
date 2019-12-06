@@ -3,51 +3,106 @@ require_self
 
 
 body {
-    font-family: Arial;
+    font-family: "Arial", sans-serif;
     padding: 20px;
     background: #f1f1f1;
+
 }
-  
+
 .header {
+    font-family: "Arial", sans-serif;
     padding: 30px;
     font-size: 40px;
     text-align: center;
-    background: white;
 }
-  
+
 .leftcolumn {
+    font-family: "Arial", sans-serif;
     float: left;
     width: 75%;
+    position: relative;
 }
-  
+
 .rightcolumn {
-    float: left;
+    font-family: "Arial", sans-serif;
+    float: right;
+    position: relative;
     width: 25%;
     padding-left: 20px;
+    flex: 50%;
 }
-  
+
 .fakeimg {
-    background-color: #aaa;
-    width: 100%;
+    border-radius: 15px 50px 30px;
+    background-color: #FFCF50;
+    width: 400px;
     padding: 20px;
 }
-  
+
 .card {
-    background-color: white;
     padding: 20px;
     margin-top: 20px;
 }
-  
+
+.row {
+  display:flex;
+}
+
 .row:after {
     content: "";
     display: table;
     clear: both;
 }
-  
+
 .footer {
     padding: 20px;
     text-align: center;
     background: #ddd;
     margin-top: 20px;
 }
-  
+
+.leftcolumn > h2, h3, h5, p {
+ border-radius: 15px 50px 30px;
+ background: #FFCF50;
+ padding: 20px;
+ width: 400px;
+ flex: 50%;
+}
+
+a:link, a:visited {
+  background-color: #F44336;
+  color: #0433FF;
+  padding: 20px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 15px 50px 30px;
+}
+a:hover, a:active {
+  background-color: red;
+}
+
+.header>h2 {
+   border-radius: 15px 50px 30px;
+   background: #FFCF50;
+   padding: 14px 25px;
+   width: 600px;
+  }
+
+form {
+   font-size: 1.5rem;
+   border-radius: 15px 50px 30px;
+   background: #FFCF50;
+   padding: 14px 25px;
+   width: 400px;
+}
+
+aside {
+    background-color: #AEFF00;
+    color: #0433FF;
+    padding: 20px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 15px 50px 30px;
+}

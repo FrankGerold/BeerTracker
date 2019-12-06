@@ -1,6 +1,10 @@
 <h1><%= @keg.name %></h1>
-<h3><%= @keg.beer_type %></h3>
-<h4><%= @keg.beer_emoji %></h4>
+<div class="fakeimg" style="height:300; width:300"> <%= image_tag( "#{@keg.photo_url}", height: '400', width: '330') %>  </div>
+<h3>Style: <%= @keg.beer_type %></h3>
+<h3>Alcohol By Volume: <%= @keg.abv %>%</h3>
+<h3>International Bitterness Units: <%= @keg.ibu %></h3>
+<h3>Average User Rating: <%= @keg.beer_emoji %></h3>
+<h3><%= @keg.desc %></h3>
 <br>
 <h3>Review this beer</h3>
 <%= form_with model: Cup.new do |f| %>

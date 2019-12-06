@@ -6,9 +6,9 @@
       <% if floor.kegs.last %>
         <div class="card">
            <% @current_keg = floor.kegs.last%>
-            <h2><%= @current_keg.name %></h2>
+            <h3><%= @current_keg.name %></h3>
             <h5><%= "#{floor.building} - #{floor.floor_number.ordinalize} floor" %></h5>
-            <div class="fakeimg" style="height:200px;">Image
+            <div class="fakeimg" style="height:350px; width:250px"> <%= image_tag( "#{@current_keg.photo_url}", height: '350', width: '250') %>
             </div>
             <p><%= "Last seen on #{@current_keg.show_day}" %>
               <%= @current_keg.beer_emoji %>

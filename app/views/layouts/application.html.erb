@@ -6,42 +6,51 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <style>
+      body {
+       background-image: url('https://trello-backgrounds.s3.amazonaws.com/SharedBackground/2560x1707/60d510845144886f8d7cea97a2778be3/photo-1535958636474-b021ee887b13');
+       background-position: top center ;
+      }
+    </style>
+
+
   </head>
 
 <body>
 
 <div class="header">
-  <h2>Beer Tracker</h2>
-  <p><% if flash[:errors] %>
-    <ul>
-    <% flash[:errors].each do |err| %>
-        <li><%= err %></li>
-    </ul>
-    <% end %>
-  <% end %>
-  <% if flash[:notice] %>
-    <%= flash[:notice] %>
-  <% end %></p>
-  <br>
-  <%= link_to "HOME", '/' %>
-  <% if session[:user_id] %>
-  <%= link_to "USER", user_path(session[:user_id]) %> <%= link_to "LOGOUT", '/logout' %>
-  <% else %>
-  <%= link_to "LOGIN", '/login' %>
-  <% end %>
+  <h2>🍺Beer Tracker🍻</h2>
+
 </div>
 
 
 <div class="row">
   <%= yield  %>
-  
+
   <div class="rightcolumn">
     <div class="card">
-      <h2>About Me</h2>
-      <div class="fakeimg" style="height:100px;">Image</div>
-      <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
-    </div>
-    <div class="card">
+      <aside>
+      <% if flash[:errors] %>
+        <ul>
+        <% flash[:errors].each do |err| %>
+            <li><%= err %></li>
+        </ul>
+        <% end %>
+      <% end %>
+      <% if flash[:notice] %>
+        <%= flash[:notice] %>
+      <% end %>
+
+    </aside>
+      <br>
+        <%= link_to "HOME", '/' %>
+        <% if session[:user_id] %>
+        <%= link_to "USER", user_path(session[:user_id]) %> <%= link_to "LOGOUT", '/logout' %>
+        <% else %>
+        <%= link_to "LOGIN", '/login' %>
+        <% end %>
+    <!-- <div class="card">
       <h3>Popular Post</h3>
       <div class="fakeimg">Image</div><br>
       <div class="fakeimg">Image</div><br>
@@ -50,12 +59,8 @@
     <div class="card">
       <h3>Follow Me</h3>
       <p>Some text..</p>
-    </div>
+    </div> -->
   </div>
-</div>
-
-<div class="footer">
-  <h2>Footer</h2>
 </div>
 
 
