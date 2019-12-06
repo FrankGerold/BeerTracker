@@ -2,7 +2,11 @@
 
 <div class="current_beer">
   <h2>Current Beer:<br>
-  <%= link_to @floor.kegs.first.name, @floor.kegs.first %>
+    <% if @floor.kegs %>
+      <%= link_to @floor.kegs.first.name, @floor.kegs.first %>
+    <% else %>
+      <p>Sorry, no beer here!</p>
+    <% end %>
 </h2></div>
   <div class="past_beers">
   <h3>Past Beers:<br>

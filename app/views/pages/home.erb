@@ -1,0 +1,20 @@
+
+
+
+<div class="leftcolumn">
+    <% @floors.each do |floor|%>
+      <% if floor.kegs.last %>
+        <div class="card">
+           <% @current_keg = floor.kegs.last%>
+            <h2><%= @current_keg.name %></h2>
+            <h5><%= "#{floor.building} - #{floor.floor_number.ordinalize} floor" %></h5>
+            <div class="fakeimg" style="height:200px;">Image
+            </div>
+            <p><%= "Last seen on #{@current_keg.show_day}" %>
+              <%= @current_keg.beer_emoji %>
+              <%= link_to @current_keg.name, @current_keg %>
+            </p>
+        </div>
+        <% end %>
+    <% end %>
+</div>

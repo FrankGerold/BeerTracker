@@ -4,12 +4,60 @@
     <title>BeerTracker</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= yield %>
-  </body>
+<body>
+
+<div class="header">
+  <h2>Beer Tracker</h2>
+  <p><% if flash[:errors] %>
+    <ul>
+    <% flash[:errors].each do |err| %>
+        <li><%= err %></li>
+    </ul>
+    <% end %>
+  <% end %>
+  <% if flash[:notice] %>
+    <%= flash[:notice] %>
+  <% end %></p>
+  <br>
+  <%= link_to "HOME", '/' %>
+  <% if session[:user_id] %>
+  <%= link_to "USER", user_path(session[:user_id]) %> <%= link_to "LOGOUT", '/logout' %>
+  <% else %>
+  <%= link_to "LOGIN", '/login' %>
+  <% end %>
+</div>
+
+
+<div class="row">
+  <%= yield  %>
+  
+  <div class="rightcolumn">
+    <div class="card">
+      <h2>About Me</h2>
+      <div class="fakeimg" style="height:100px;">Image</div>
+      <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
+    </div>
+    <div class="card">
+      <h3>Popular Post</h3>
+      <div class="fakeimg">Image</div><br>
+      <div class="fakeimg">Image</div><br>
+      <div class="fakeimg">Image</div>
+    </div>
+    <div class="card">
+      <h3>Follow Me</h3>
+      <p>Some text..</p>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <h2>Footer</h2>
+</div>
+
+
+</body>
 </html>
